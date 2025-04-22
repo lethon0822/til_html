@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- 전체 레이아웃 -->
-    <div>
+    <div class="wrap">
       <!-- (시멘틱 태그로 영역을 나누기 -웹 브라우저가 앎) -->
       <!-- 상단 -->
       <header class="header">
@@ -74,20 +74,39 @@
       </header>
       <!-- 메인 -->
       <main>
-        <!-- Event -->
-        <div></div>
-        <!-- Tour -->
-        <div></div>
-        <!-- Trip -->
-        <div></div>
-        <!-- Ticket -->
-        <div></div>
-        <!-- Live -->
-        <div></div>
+        <div class="layout">
+          <!-- Banner -->
+          <div class="banner">
+            <div class="banner_list">
+              <a href="#"
+                ><img src="images/v1.png" alt="banner" , title="배너" />
+              </a>
+            </div>
+            <div class="banner_list">
+              <a href="#"
+                ><img src="images/v2.jpg" alt="banner2" , title="배너2" />
+              </a>
+            </div>
+            <button class="slide_bt banner_left">
+              <img src="images/slider_arrow.svg" alt="left" title="left" />
+            </button>
+            <button class="slide_bt banner_right">
+              <img src="images/slider_arrow.svg" alt="right" title="right" />
+            </button>
+          </div>
+          <!-- Tour -->
+          <div></div>
+          <!-- Trip -->
+          <div></div>
+          <!-- Ticket -->
+          <div></div>
+          <!-- Live -->
+          <div></div>
+        </div>
       </main>
       <!-- 하단 -->
       <footer>
-        <div></div>
+        <div class="layout"></div>
       </footer>
     </div>
   </body>
