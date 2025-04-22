@@ -97,3 +97,5 @@
 </html>
 
 ```
+
+# main > banner 영역
