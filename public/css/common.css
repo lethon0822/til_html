@@ -1,9 +1,12 @@
 @charset "utf-8"; /* 화면에 표현되는 속성... 맨위에 놓을 것 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   /* 레이아웃 만들기 전 작업 */
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* 박스 안으로 그리도록 */
+  outline-style: none;
   /* outline-style: none; < 탭누를 대마다 포커스 맞춰주는 아웃라인. 해도 괜찮고 안해도 괜찮음. */
 } /* 전부 선택 : * */
 
@@ -21,12 +24,16 @@ html {
   /* 디자인 보고 수정 */
   font-size: 16px;
 }
+
 body {
   width: 100%;
   font-size: 1rem; /* html 글자 크기의 배율만큼*/
   /* 디자인 보고 수정 */
   color: #000000;
-  /* 글꼴 필요 */
+  /* 글꼴 필요 (앞 글꼴이 적용 안되면 뒤 글꼴로 - 배치순서) */
+  font-family: "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+  letter-spacing: 0px;
+  word-spacing: 0px;
 }
 
 .wrap {
@@ -47,23 +54,52 @@ body {
   border-bottom: 1px solid #ebebeb;
 }
 
-/* flex : https://studiomeal.com/archives/197 */
 .header_top {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
+
 .header_top_left {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
+
+.logo > a > img {
+  width: 150px;
+  height: 38;
+}
+
 .search {
 }
+
 .search_form {
   display: flex;
   align-items: center;
+  width: 460px;
 }
+
+.search_form_word {
+  width: calc(100% - 50px);
+  height: 50px;
+  background-color: #f7f7f8;
+  border: none;
+  border-radius: 25px 0px 0px 25px;
+  padding-left: 15px;
+}
+
+.search_form_button {
+  width: 50px;
+  height: 50px;
+  background-color: #f7f7f8;
+  border: none;
+  border-radius: 0px 25px 25px 0px;
+}
+
 .header_top_right {
 }
 .member {
