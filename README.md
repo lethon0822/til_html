@@ -416,3 +416,28 @@ ul a {
 
 - margin (영역 바깥으로의 여백)
   - margin-top 은 오류가 발생할 수 있음.
+
+## 8. position을 꼭 기억하기
+
+### 8.1. 정확하게 px로 지정하고 싶을 때
+
+- 아래처럼 할 때 주의할 것
+- 바깥 영역에 'position relative가 있어야 영역 안에 들어감
+
+```css
+position: absolute;
+left 0px;
+top 0px;
+bottom 0px;
+right 0px;
+```
+
+### 8.2. 웹 브라우저에 위치를 고정하고 싶을 때
+
+```css
+position: fixed;
+left 0px;
+top 0px;
+bottom 0px;
+right 0px;
+```
