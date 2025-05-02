@@ -267,7 +267,7 @@ git init
 git status
 ```
 
-- Git 에서 `파일 및 폴더 통째로` 추적하기 설정
+- Git 에서 `파일 및 폴더 전체적으로` 추적하기 설정
 
 ```bash
 git add .
@@ -285,8 +285,6 @@ git commit
 git branch header
 git switch header
 ```
-
-- 월요일 할거지롱...?
 
 ## 3. GitHub 관리
 
