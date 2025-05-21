@@ -41,10 +41,14 @@ window.addEventListener("load", function () {
     // const cateArr2 = _data.map(item => item.cate);
 
     // 위에서 모든 파싱 처리를 마친 뒤에 실행
+    tourStart();
+  };
+
+  function tourStart() {
     makeTourInit();
     activeCateFocus();
     addBtsEvent();
-  };
+  }
 
   // 최초 데이터가 전달되면 1번만 실행
   // 카테고리 버튼은 1번만 만들어도 됨.
