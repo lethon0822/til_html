@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
       htmlTag = htmlTag + tag;
     }
 
-    console.log(htmlTag);
+    // console.log(htmlTag);
     //   외우세요. 글자를 html 태그로 넣는 법
     swBannerWrap.innerHTML = htmlTag;
 

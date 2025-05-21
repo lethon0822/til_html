@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
     // 2. 반응형은 높이값이 계속 변하므로 스크롤 안에. 1번에 둬도 괜찮음.
     const headerTopH = this.document.querySelector(".header_top");
     // offsetHeight : 높이가 바뀌어도 상관없이 현재 높이값
-    console.log(headerTopH.offsetHeight); // 70px 출력
+    // console.log(headerTopH.offsetHeight); // 70px 출력
 
     // 만약 50 보다 작으면 전체 를 보이고, 그렇지 않으면 일부분을 숨기기
     if (scrollY <= headerTopH.offsetHeight) {
