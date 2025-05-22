@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.banner_fix {
+  padding-top: 50px;
+}
+
 .banner_slide {
   display: flex;
   gap: 25px;

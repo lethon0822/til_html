@@ -49,8 +49,7 @@
 }
 
 .section_slide {
-  display: flex;
-  gap: 25px;
+  position: relative;
   margin-bottom: 20px;
 }
 .item {
@@ -139,5 +138,5 @@
 
 /* swiper 버튼 비활성시 표현 */
 .swiper-button-disabled {
-  display: none;
+  display: none !important;
 }

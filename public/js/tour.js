@@ -155,8 +155,8 @@ window.addEventListener("load", function () {
       slidesPerGroup: 3,
       spaceBetween: 30,
       navigation: {
-        nextEl: ".tour-next",
-        prevEl: ".tour-prev",
+        nextEl: ".tour_next",
+        prevEl: ".tour_prev",
       },
     });
 
