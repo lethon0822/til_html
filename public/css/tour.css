@@ -1,4 +1,5 @@
 .tour {
+  positon: relative;
   margin-top: 65px;
 }
 .section_top {
@@ -134,4 +135,9 @@
 }
 .section_bts > a > img {
   transform: translateY(1px);
+}
+
+/* swiper 버튼 비활성시 표현 */
+.swiper-button-disabled {
+  display: none;
 }

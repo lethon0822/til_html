@@ -1,3 +1,6 @@
+// 이미지 등의 리소스가 부러들여지면 그때 슬라이드 처리가 자연스러움
+// 이미지를 불러들여야하기 때문에 기다리기 위해 load 이벤트를 사용함
+
 window.addEventListener("load", function () {
   // api 주소 (파일 주소)
   const apiUrl = "http://127.0.0.1:5500/public/api/tour.json";
@@ -9,6 +12,8 @@ window.addEventListener("load", function () {
   let cateNameArr = [];
   // 리스트 목록 배열
   let cateListArr = [];
+  // 투어 슬라이드 변수
+  let swTour;
 
   // api 호출 함수
   // async ==> 외부 데이터 연동이라고 유추
@@ -72,7 +77,7 @@ window.addEventListener("load", function () {
 
   // 실시간으로 생성된 버튼에 이벤트 연결하기
   function addBtsEvent() {
-    cateButtonArr.forEach((item, index) => {
+    cateButtonArr.forEach(function (item, index) {
       item.addEventListener("click", function () {
         // 동일한 버튼 클릭 시 작동 방지
         if (cateFocusIndex === index) {
@@ -95,6 +100,67 @@ window.addEventListener("load", function () {
   // 카테고리 버튼에 현재 포커스 표현하기
   function activeCateFocus() {
     cateButtonArr[cateFocusIndex].classList.add("cate_focus");
+    makeTourListHtml();
+  }
+
+  // 목록 html 생성
+  function makeTourListHtml() {
+    console.log("어느 목록을 출력할 것인가? " + cateListArr[cateFocusIndex]);
+    // 1. html 태그만들기
+    // 1.1. 어디다가 만들지? querySelector 찾아줌.
+    //여기가 문제
+    const swTourWrap = document.querySelector(".sw_tour .swiper-wrapper");
+
+    // 1.2. html 만들기
+    let html = "";
+    const listArr = cateListArr[cateFocusIndex];
+    listArr.forEach(function (item) {
+      const tag = `
+      <div class="swiper-slide">
+        <div class="item">
+          <a href="${item.link}">
+            <div class="item_image">
+              <img
+                src="${item.image}"
+                alt="${item.title}"
+                title="${item.title}"
+              />
+            </div>
+            <span class="item_name">${item.city}</span>
+            <div class="item_text">
+              <span class="item_cupon">
+              ${item.title}
+              </span>
+              <p class="item_desc">
+              ${item.content}
+              </p>
+              <span class="item_price"><b>${item.price}</b>원~</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      `;
+      html = html + tag;
+    });
+    swTourWrap.innerHTML = html;
+
+    // 2. 항상 슬라이드가 만들어져 있다면 삭제하기
+    if (swTour) {
+      // swiper를 제거함. (swiper의 사이트의 레퍼런스 참조)
+      swTour.destroy(true, true);
+    }
+    // 3. 이후 슬라이드를 생성하기
+    swTour = new Swiper(".sw_tour", {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".tour-next",
+        prevEl: ".tour-prev",
+      },
+    });
+
+    // 2. swiper 생성하기
   }
 
   // 함수 호출 (여기서부터 동작 시작)
