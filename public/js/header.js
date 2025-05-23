@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
   const search = this.document.querySelector(".search");
   const eventmenu = this.document.querySelector(".header_bottom_eventmenu");
   const member = this.document.querySelector(".header_top_right");
+  const main = this.document.querySelector(".main");
 
   // 1. const headerTopH = this.document.querySelector(".header_top");  // 바깥에 두면 성능을 생각?한 것.
 
@@ -31,15 +32,19 @@ window.addEventListener("DOMContentLoaded", function () {
       headerTop.classList.remove("header_top_down");
       search.classList.remove("search_down");
       member.classList.remove("member_down");
+      main.classList.remove("main_fixed");
     } else {
       // console.log("일부");
       // logo를 css로 제어
       logo.style.display = "none";
       eventmenu.style.display = "none";
-      header.classList.add("header_down");
+      // class추가로 변경
+      // header.classList.add("header_down");
       headerTop.classList.add("header_top_down");
       search.classList.add("search_down");
       member.classList.add("member_down");
+      return;
+      // main.classList.add("main_fixed");
     }
   });
 });

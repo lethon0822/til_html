@@ -105,7 +105,6 @@ window.addEventListener("load", function () {
 
   // 목록 html 생성
   function makeTourListHtml() {
-    console.log("어느 목록을 출력할 것인가? " + cateListArr[cateFocusIndex]);
     // 1. html 태그만들기
     // 1.1. 어디다가 만들지? querySelector 찾아줌.
     //여기가 문제
