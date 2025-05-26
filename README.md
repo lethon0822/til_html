@@ -152,4 +152,4 @@ margin-top의 오류.
 ### 4.3. css작업
 
 - layout 클래스를 작업(common.css)
--
+- header 영역 css 작업 : header와 반응형 header를 분리해서 만들기
