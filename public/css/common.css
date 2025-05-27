@@ -21,8 +21,9 @@ ul {
 }
 html {
   width: 100%;
-  /* 디자인 보고 수정 */
   font-size: 16px;
+  /* 가로 스크롤은 좋지 않음 */
+  overflow-x: hidden;
 }
 
 body {

@@ -153,3 +153,127 @@ margin-top의 오류.
 
 - layout 클래스를 작업(common.css)
 - header 영역 css 작업 : header와 반응형 header를 분리해서 만들기
+
+## 5. 자연스러운 반응형 계산법
+
+- 예제)
+
+  - PC 디자인 영역 너비가 1280px
+  - 특정 영역의 너비가 650px, 높이가 400px
+  - 자연스러운 너비, 높이를 적용한다면?
+
+- 정리)
+  - max-width: 650px, max-height: 400px;
+  - 영역너비(650px) / 디자인 전체 너비 (1280) \* 100 = 결과`vw`;
+  - 영역너비(480px) / 디자인 전체 너비 (1280) \* 100 = 결과`vw`;
+
+```html
+<!-- 자연스러운 반응형 계산법 -->
+<div class="box_wrap">
+  <div class="box">내용</div>
+</div>
+```
+
+```css
+/* 자연스러운 반응형 계산법 */
+.box_wrap {
+  positive: relative;
+  max-width: 1280px;
+  width: 100%;
+  background-color: hotpink;
+  margin: 0 auto;
+}
+
+.box {
+  positive: relative;
+  max-width: 650px;
+  width: 50.78vw;
+  max-height: 400px;
+  /* 높이 계산이더라도 너비가 기준이 되므로 vw */
+  height: 32.15vw;
+  background-color: yellowgreen;
+  margin: 0 auto;
+}
+```
+
+## 6. 안내창 만들기
+
+```css
+/* 안내창 */
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* 아래처럼 해도 OK */
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+}
+
+.popup_content {
+  position: relative;
+  max-width: 650px;
+  width: 50.78vw;
+  max-height: 400px;
+  height: 32.15vw;
+  background-color: yellowgreen;
+  margin: 0 auto;
+}
+```
+
+# SCSS 셋팅
+
+- VSCode에서 설치 : `Live Sass Compiler`
+- 실습
+
+  - css 폴더/test.scss
+  - VSCode 하단에 `Watch Sass` 클릭 > `Wathing...`으로
+  -
+
+- 예시)
+
+```scss
+.wrap {
+  position: relative;
+  .header {
+    width: 100%;
+    &_left {
+      position: relative;
+      &_box {
+        position: relative;
+      }
+    }
+  }
+  .main {
+    display: flex;
+  }
+  .footer {
+    display: flex;
+  }
+}
+```
+
+- 저장 시 아래로 변환됨
+
+```css
+.wrap {
+  position: relative;
+}
+.wrap .header {
+  width: 100%;
+}
+.wrap .header_left {
+  position: relative;
+}
+.wrap .header_left_box {
+  position: relative;
+}
+.wrap .main {
+  display: flex;
+}
+.wrap .footer {
+  display: flex;
+} /*# sourceMappingURL=test.css.map */
+```
