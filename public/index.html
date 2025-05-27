@@ -15,12 +15,14 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/banner.css" />
     <link rel="stylesheet" href="css/tour.css" />
+    <link rel="stylesheet" href="css/trip.css" />
 
     <!-- js 초기 코드  -->
     <script src="js/index.js"></script>
     <script src="js/header.js"></script>
     <script src="js/banner.js"></script>
     <script src="js/tour.js"></script>
+    <script src="js/trip.js"></script>
     <meta name="viewport" content="width-device-width, initial-scale=1.0" />
   </head>
 
@@ -189,7 +191,52 @@
             </div>
           </div>
           <!-- Trip -->
-          <div></div>
+
+          <div class="trip">
+            <div class="swiper sw_trip">
+              <div class="swiper-wrapper">
+                <!-- API 연동 -->
+              </div>
+            </div>
+
+            <!-- w트립 로고 + 설명 부분 -->
+            <div class="trip_logos">
+              <img
+                src="api/trip/icon_w_trip_new_pc.svg"
+                alt="w트립"
+                title="w트립"
+              />
+              <img src="api/trip/icon_w_trip_question_mark_pc.svg" />
+              <span class="section_desc"
+                >누구와 여행 가시나요? 동행자별 맞춤여행</span
+              >
+            </div>
+
+            <!-- 투어같은 슬라이더 부분  -->
+            <div>
+              <div class="swiper-pagination sw_trip_pg"></div>
+
+              <button class="slide_bt trip_prev slide_bt_left">
+                <img src="images/slider_arrow.svg" alt="left" title="left" />
+              </button>
+
+              <button class="slide_bt trip_next slide_bt_right">
+                <img src="images/slider_arrow.svg" alt="right" title="right" />
+              </button>
+            </div>
+
+            <div class="section_bts">
+              <a href="#">
+                투어 홈 바로가기
+                <img
+                  src="images/icon_linkArrow.svg"
+                  alt="투어 홈 바로가기"
+                  title="투어 홈 바로가기"
+                />
+              </a>
+            </div>
+          </div>
+
           <!-- Ticket -->
           <div></div>
           <!-- Live -->
@@ -198,6 +245,9 @@
       </main>
       <!-- 하단 -->
       <footer>
+        <div></div>
+        <div></div>
+        <div></div>
         <div></div>
       </footer>
     </div>

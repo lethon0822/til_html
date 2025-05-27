@@ -1,0 +1,9 @@
+.trip {
+  positon: relative;
+  margin: 65px 0px;
+}
+
+.trip_logos {
+  justify-items: center;
+  padding-bottom: 22px;
+}
